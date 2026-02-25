@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Scientific Calculator v1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <div class="calc-outer">
+    <div class="calculator">
+
+      <div class="top-brand">
+        <div class="brand-left">CASIO</div>
+
+        <div class="brand-right">
+          <div class="model">fx-82ES PLUS</div>
+          <div class="edition">2nd edition</div>
+        </div>
+      </div>
+
+      <div class="sub-brand">NATURAL·V.P.A.M.</div>
+
+      <!-- Display -->
+      <div class="display-bezel">
+        <div class="display-input" id="displayInput">0</div>
+        <div class="display-result" id="displayResult"></div>
+        <div class="display-frame">
+          <div class="display" id="display">0</div>
+        </div>
+      </div>
+
+
+      <!-- nav-bar -->
+      <div class="nav-bar">
+
+
+        <button class="nav-btn shift">SHIFT</button>
+        <button class="nav-btn alpha">ALPHA</button>
+
+        <div class="dpad">
+          <div class="dpad-btn up">▲</div>
+          <div class="dpad-btn left">◀</div>
+          <div class="dpad-btn center"></div>
+          <div class="dpad-btn right">▶</div>
+          <div class="dpad-btn down">▼</div>
+        </div>
+
+        <button class="nav-btn mode">MODE</button>
+        <button class="nav-btn on">ON</button>
+      </div>
+
+      <!--science-->
+      <div class="sci-grid">
+        <div class="sci-row">
+          <button class="btn fn">Abs</button>
+          <button class="btn fn">x³</button>
+          <div class="spacer"></div>
+          <div class="spacer"></div>
+
+          <button class="btn fn">X<sup>-1</sup></button>
+          <button class="btn fn">log<sub>n(</sub></button>
+
+
+          <button class="btn fn">믐</button>
+          <button class="btn fn">√</button>
+          <button class="btn fn">x<sup>2</sup></button>
+          <button class="btn fn">X<sup>n</sup></button>
+          <button class="btn fn">log</button>
+          <button class="btn fn">ln</button>
+
+          <button class="btn fn">(-)</button>
+          <button class="btn fn">.,,,</button>
+          <button class="btn fn">hyp</button>
+          <button class="btn fn">sin</button>
+          <button class="btn fn">tan</button>
+
+          <button class="btn fn">RCL</button>
+          <button class="btn fn">cos</button>
+          <button class="btn fn">ENG</button>
+          <button class="btn fn">(</button>
+          <button class="btn fn">)</button>
+          <button class="btn fn">S↔D</button>
+          <button class="btn fn">M+</button>
+        </div>
+      </div>
+
+      <!--numbers-->
+      <div class="num-grid">
+
+        <!-- ROW 1 -->
+         
+        <div class="num-row">
+          <div class="key"><button class="btn">7</button></div>
+          <div class="key"><button class="btn">8</button></div>
+          <div class="key"><button class="btn">9</button></div>
+
+
+          <div class="key">
+           <span class="label shift">INS</span>
+           <button class="btn del">DEL</button>
+          </div>
+
+          <div class="key">
+            <span class="label power">OFF</span>
+            <button class="btn ac">AC</button>
+         </div>
+        </div>
+      
+
+
+      <!-- Row 2 -->
+        <div class="num-row">
+          <div class="key"><button class="btn">4</button></div>
+          <div class="key"><button class="btn">5</button></div>
+          <div class="key"><button class="btn">6</button></div>
+
+         <div class="key">
+           <span class="label shift">nPr</span>
+           <button class="btn operator">×</button>
+         </div>
+
+          <div class="key">
+            <span class="label shift">nCr</span>
+            <button class="btn operator">÷</button>
+          </div>
+        </div>
+      
+
+          <!-- Row 3 -->
+       <div class="num-row">
+         <div class="key">
+           <span class="label shift">[STAT]</span>
+           <button class="btn">1</button>
+         </div>
+
+         <div class="key">
+           <button class="btn">2</button></div>
+           <div class="key">
+          <button class="btn">3</button>
+         </div>
+
+         <div class="key">
+           <span class="label shift">Pol</span>
+           <button class="btn operator">+</button>
+         </div>
+
+         <div class="key">
+          <span class="label shift">Rec</span>
+          <button class="btn operator">−</button>
+          </div>
+        </div>
+    <!-- Row 4 -->
+        <div class="num-row">
+         <div class="key">
+           <span class="label shift">Rnd</span>
+          <button class="btn zero">0</button>
+         </div>
+  
+         <div class="key">
+          <span class="label shift">Ran#</span>
+          <!--<span class=" label alpha">Ranlt</span>-->
+          <button class="btn dot">.</button>
+         </div>
+
+         <div class="key">
+         <span class="label alpha">π</span>
+         <span class=" label alpha">e</span>
+        <button class="btn ">X10<sup>x</sup></button>
+         </div>
+
+        <div class="key">
+         <span class="label shift">DRG▶</span>
+        <button class="btn">Ans</button>
+        </div>
+
+       <div class="key">
+       <button class="btn equal">=</button>
+       </div>
+     </div>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
