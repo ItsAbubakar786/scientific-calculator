@@ -1,10 +1,50 @@
 const display = document.getElementById("display");
+const displayInput = document.getElementById("displayInput");
 const buttons = document.querySelectorAll(".btn");
 
-let current = "0";
+let currentInput = "0";
+let previousInput = null;
+let operator = null;
+let shouldResetScreen = false;
 
 function updateDisplay() {
-  display.textContent = current;
+  display.textContent = currentInput;
+}
+
+function updateExpression() {
+  if (previousInput && operator) {
+    displayInput.textContent = previousInput + " " + operator;
+  } else {
+    displayInput.textContent = "";
+  }
+}
+
+function calculate() {
+  if (previousInput === null || operator === null) return;
+
+  const prev = parseFloat(previousInput);
+  const current = parseFloat(currentInput);
+  let result = 0;
+
+  switch (operator) {
+    case "+":
+      result = prev + current;
+      break;
+    case "−":
+      result = prev - current;
+      break;
+    case "×":
+      result = prev * current;
+      break;
+    case "÷":
+      result = current === 0 ? "Error" : prev / current;
+      break;
+  }
+
+  currentInput = result.toString();
+  previousInput = null;
+  operator = null;
+  displayInput.textContent = "";
 }
 
 buttons.forEach(btn => {
@@ -13,26 +53,52 @@ buttons.forEach(btn => {
 
     // AC
     if (btn.classList.contains("ac")) {
-      current = "0";
+      currentInput = "0";
+      previousInput = null;
+      operator = null;
+      displayInput.textContent = "";
       updateDisplay();
       return;
     }
 
     // DEL
     if (btn.classList.contains("del")) {
-      current = current.length > 1 ? current.slice(0, -1) : "0";
+      currentInput =
+        currentInput.length > 1
+          ? currentInput.slice(0, -1)
+          : "0";
       updateDisplay();
       return;
     }
 
-    // First input replace 0
-    if (current === "0") {
-      current = value;
+    // =
+    if (btn.classList.contains("equal")) {
+      calculate();
+      updateDisplay();
+      shouldResetScreen = true;
+      return;
+    }
+
+    // Operators
+    if (btn.classList.contains("operator")) {
+      operator = value;
+      previousInput = currentInput;
+      shouldResetScreen = true;
+      updateExpression();
+      return;
+    }
+
+    // Numbers / dot
+    if (shouldResetScreen) {
+      currentInput = value;
+      shouldResetScreen = false;
     } else {
-      current += value;
+      currentInput =
+        currentInput === "0"
+          ? value
+          : currentInput + value;
     }
 
     updateDisplay();
   });
 });
-
