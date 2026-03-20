@@ -8,7 +8,7 @@ This project currently supports basic arithmetic operations and is designed as a
 
 ## 🚀 Live Demo
 
-👉 https://your-username.github.io/scientific-calculator/
+👉 https://ItsAbubakar786.github.io/scientific-calculator/
 
 ---
 
